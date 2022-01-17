@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ADMINISTRA LOS VALORES UTILIZADOS CON FRECUENCIA -->
+<resources>
+    <!-- Utiizamos dos veces la altura minima dos veces -->
+    <dimen name="min_text_heigth">48dp</dimen>
+
+
+</resources>
