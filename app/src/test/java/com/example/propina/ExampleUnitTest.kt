@@ -13,11 +13,10 @@ class ExampleUnitTest {
 
     @Test
     fun generate_numbers() {
-        /*
-        val dice = Dice(6)
+        /*val dice = Dice(6)
         val rollResult = dice.roll()
         assertTrue("Valor de rollResult no esta entre 1 and 6", rollResult in 1..6 )
-        */
+         */
     }
 
     @Test

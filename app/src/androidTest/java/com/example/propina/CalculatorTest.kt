@@ -1,6 +1,7 @@
 package com.example.propina
 
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.assertion.ViewAssertions.matches
@@ -12,6 +13,7 @@ import org.hamcrest.Matchers.containsString
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import java.util.regex.Pattern.matches
 
 @RunWith(AndroidJUnit4::class)
 class CalculatorTest {
@@ -22,7 +24,9 @@ class CalculatorTest {
     @Test
     fun calculate_20_percent_tip() {
         onView(withId(R.id.cost_of_service_edit_text))
-            .perform( typeText("50.00"))
+            .perform(typeText("50.00"))
+            //Cierra el teclado en caso de usar dispositivos pequeños
+            .perform(ViewActions.closeSoftKeyboard())
 
         onView(withId(R.id.calculate))
             .perform( click())
@@ -49,5 +53,4 @@ class CalculatorTest {
         onView(withId(R.id.tip_result))
             .check( matches(withText(containsString("$15.00"))))
     }
-
 }

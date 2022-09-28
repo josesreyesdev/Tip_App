@@ -1,13 +1,12 @@
 package com.example.propina
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.util.Log.WARN
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.app.AppCompatActivity
 import com.example.propina.databinding.ActivityMainBinding
 import java.text.NumberFormat
 import kotlin.math.ceil
@@ -22,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        displayTip(0.0)
         binding.calculate.setOnClickListener { calcularPropina() }
         binding.costOfServiceEditText.setOnKeyListener { view, keyCode, _/*keyEvent */ ->
             handleKeyEvent(
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calcularPropina() {
-        //Get costo del servicio
+        //Get cost of service
         val stringInTextField = binding.costOfServiceEditText.text.toString()
         val cost = stringInTextField.toDoubleOrNull()
         if (cost == null || cost == 0.0) {
@@ -44,15 +44,15 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        //Get porcentaje de propina a partir del radioButton seleccionado
-        val tipPorcentage = when (binding.tipOptions.checkedRadioButtonId) {
+        //Get percentage de propina a partir del radioButton seleccionado
+        val tipPercentage = when (binding.tipOptions.checkedRadioButtonId) {
             R.id.option_twenty_percent -> 0.20
             R.id.option_eighteen_percent -> 0.18
             else -> 0.15
         }
 
         //Calculo de propina
-        var tip = cost * tipPorcentage
+        var tip = cost * tipPercentage
 
         //calculo de redondeo de la propina, si fue seleccionado
         if (binding.roundUpSwitch.isChecked) {
