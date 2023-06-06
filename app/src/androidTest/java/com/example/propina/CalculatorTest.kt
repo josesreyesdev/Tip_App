@@ -13,12 +13,11 @@ import org.hamcrest.Matchers.containsString
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import java.util.regex.Pattern.matches
 
 @RunWith(AndroidJUnit4::class)
 class CalculatorTest {
 
-    @get:Rule()
+    @get:Rule
     val activity = ActivityScenarioRule(MainActivity::class.java)
 
     @Test

@@ -30,9 +30,9 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-        /* funciones para pruebas
+        /* funciones para pruebas */
         division()
-        logging() */
+        logging()
     }
 
     private fun calcularPropina() {
