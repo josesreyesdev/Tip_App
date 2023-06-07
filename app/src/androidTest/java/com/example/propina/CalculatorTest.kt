@@ -24,7 +24,7 @@ class CalculatorTest {
     fun calculate_20_percent_tip() {
         onView(withId(R.id.cost_of_service_edit_text))
             .perform(typeText("50.00"))
-            //Cierra el teclado en caso de usar dispositivos pequeños
+            //Close key in case of use a small device
             .perform(ViewActions.closeSoftKeyboard())
 
         onView(withId(R.id.calculate))

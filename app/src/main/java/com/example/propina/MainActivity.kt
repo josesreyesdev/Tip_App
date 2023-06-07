@@ -2,7 +2,6 @@ package com.example.propina
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -11,8 +10,6 @@ import com.example.propina.databinding.ActivityMainBinding
 import java.text.NumberFormat
 import kotlin.math.ceil
 
-//Variable para probar el log
-private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
@@ -24,15 +21,8 @@ class MainActivity : AppCompatActivity() {
         displayTip(0.0)
         binding.calculate.setOnClickListener { calcularPropina() }
         binding.costOfServiceEditText.setOnKeyListener { view, keyCode, _/*keyEvent */ ->
-            handleKeyEvent(
-                view,
-                keyCode
-            )
+            handleKeyEvent(view, keyCode)
         }
-
-        /* funciones para pruebas */
-        division()
-        logging()
     }
 
     private fun calcularPropina() {
@@ -44,28 +34,25 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        //Get percentage de propina a partir del radioButton seleccionado
         val tipPercentage = when (binding.tipOptions.checkedRadioButtonId) {
             R.id.option_twenty_percent -> 0.20
             R.id.option_eighteen_percent -> 0.18
             else -> 0.15
         }
 
-        //Calculo de propina
         var tip = cost * tipPercentage
 
-        //calculo de redondeo de la propina, si fue seleccionado
         if (binding.roundUpSwitch.isChecked) {
-            tip = ceil(tip) //ceil -> redondea la propina
+            tip = ceil(tip) //ceil -> rounding a tip
         }
 
-        displayTip(tip)
+        displayTip(tip = tip)
 
     }
 
-    //Formateador de moneda
-    private fun displayTip(propina: Double) {
-        val formattedTip = NumberFormat.getCurrencyInstance().format(propina)
+    //Formatter tip
+    private fun displayTip(tip: Double) {
+        val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
         binding.tipResult.text = getString(R.string.tip_amount, formattedTip)
     }
 
@@ -79,26 +66,5 @@ class MainActivity : AppCompatActivity() {
             return true
         }
         return false
-    }
-
-    //Funcion para probar errores de consola y hacer debug
-    private fun division() {
-        val numerator = 60
-        var denominador = 4
-        repeat(5) {
-            if (denominador != 0) {
-                println(numerator / denominador)
-            }
-            denominador--
-        }
-    }
-
-    //Función para probar distintos logs en consola
-    private fun logging() {
-        Log.e(TAG, "ERROR: a serious error like an app crash")
-        Log.w(TAG, "WARN: Warns about potential for serious error")
-        Log.i(TAG, "INFO: Reporting technical information")
-        Log.d(TAG, "DEBUG: reporting technical information, useful for debugging")
-        Log.v(TAG, "VERBOSE: more verbose than DEBUG logs")
     }
 }
