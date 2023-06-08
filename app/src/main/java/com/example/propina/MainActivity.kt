@@ -19,13 +19,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         displayTip(0.0)
-        binding.calculate.setOnClickListener { calcularPropina() }
+        binding.calculate.setOnClickListener { calculateTip() }
         binding.costOfServiceEditText.setOnKeyListener { view, keyCode, _/*keyEvent */ ->
             handleKeyEvent(view, keyCode)
         }
     }
 
-    private fun calcularPropina() {
+    private fun calculateTip() {
         //Get cost of service
         val stringInTextField = binding.costOfServiceEditText.text.toString()
         val cost = stringInTextField.toDoubleOrNull()
@@ -46,8 +46,7 @@ class MainActivity : AppCompatActivity() {
             tip = ceil(tip) //ceil -> rounding a tip
         }
 
-        displayTip(tip = tip)
-
+        displayTip(tip)
     }
 
     //Formatter tip
