@@ -10,13 +10,13 @@
         <item name="colorSecondaryVariant">@color/blue_light</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
 
         <!-- Estilos para los textViews, RadioButtons y Switches -->
         <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox</item>
-        <item name="radioButtonStyle">@style/Widget.Propina.CompoundButton.RadioButton</item>
-        <item name="switchStyle">@style/Widget.Propina.CompoundButton.Switch</item>
+        <item name="radioButtonStyle">@style/Widget.Tip.CompoundButton.RadioButton</item>
+        <item name="switchStyle">@style/Widget.Tip.CompoundButton.Switch</item>
 
     </style>
 </resources>

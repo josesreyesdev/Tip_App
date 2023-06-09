@@ -4,23 +4,23 @@
 <resources>
     <!-- TEXTVIEWS => alto minimo del textView de 48dp, centrar el texto con gravity, y
     tamaño predefinido con textAppearance -->
-    <style name="Widget.Propina.TextView" parent="Widget.MaterialComponents.TextView">
-        <item name="android:minHeight">@dimen/min_text_heigth</item>
+    <style name="Widget.Tip.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:minHeight">@dimen/min_text_height</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
     </style>
 
     <!-- SWITCH => alto minimo del textView de 48dp, centrar el texto con gravity, y
     tamaño predefinido con textAppearance -->
-    <style name="Widget.Propina.CompoundButton.Switch" parent="Widget.MaterialComponents.CompoundButton.Switch">
-        <item name="android:minHeight">@dimen/min_text_heigth</item>
+    <style name="Widget.Tip.CompoundButton.Switch" parent="Widget.MaterialComponents.CompoundButton.Switch">
+        <item name="android:minHeight">@dimen/min_text_height</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
     </style>
 
     <!-- RADIOBUTTONS => relleno entre el btn de seleccion y la img con paddingStart en 8dp,
     tamaño predefinido con textAppearance -->
-    <style name="Widget.Propina.CompoundButton.RadioButton"
+    <style name="Widget.Tip.CompoundButton.RadioButton"
         parent="Widget.MaterialComponents.CompoundButton.RadioButton">
         <item name="android:paddingStart">8dp</item>
         <item name="android:textAppearance">?attr/textAppearanceBody1</item>
