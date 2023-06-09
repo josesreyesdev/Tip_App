@@ -9,7 +9,7 @@
 - 💅🏾 Instrumented Test
 
 ### Dependencies / Prerequisites
-Add dependencies for a build.gradle in app level
+Add dependencies in app level
 
 ```Kotlin
   dependencies {
