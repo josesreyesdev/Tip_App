@@ -9,14 +9,14 @@
 - 💅🏾 Instrumented Test
 
 ### Dependencies / Prerequisites
-Add dependencies for a build.gradle in level app
+Add dependencies for a build.gradle in app level
 
 ```Kotlin
   dependencies {
     def current_version = "1.9.0"
     
     //Material Design Components
-    implementation 'com.google.android.material:material:<current_version>'
+    implementation "com.google.android.material:material:$current_version"
     
     //Instrumented Test, (Update a currents version)
     androidTestImplementation 'androidx.test:runner:1.5.2'
