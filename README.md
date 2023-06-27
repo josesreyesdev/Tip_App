@@ -1,4 +1,4 @@
-# 🚀 Tip_App
+# 🚀 Tip App
 > Basic application for calculate a tip (15%, 18% or 20%) and round up tip if is required.
 
 ## Developing
@@ -30,10 +30,10 @@ Add dependencies in app level
 ### Screens Project
 <p>
   <a href="#">
-    <img src="https://github.com/josesreyesdev/AssetsProjects/blob/main/Tip%20App/TipScreen.jpg" alt="screen" width="200" height="350" />
+    <img src="https://github.com/josesreyesdev/AssetsProjects/blob/main/01%20Tip%20App/TipScreen.jpg" alt="screen" width="200" height="350" />
   </a>
   <a href="#">
-    <img src="https://github.com/josesreyesdev/AssetsProjects/blob/main/Tip%20App/TipNightScreen.jpg" alt="screen" width="200" height="350" />
+    <img src="https://github.com/josesreyesdev/AssetsProjects/blob/main/01%20Tip%20App/TipNightScreen.jpg" alt="screen" width="200" height="350" />
   </a>
 </p>
 
